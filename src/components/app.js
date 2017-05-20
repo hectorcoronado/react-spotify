@@ -14,7 +14,7 @@ export default class App extends Component {
 
   fetchSongs = () => {
     searchSpotify(this.state.song)
-      .then((tracks) => console.log('tracks: ', tracks));
+      .then((tracks) => console.log('tracks', tracks));
   }
 
   render() {
