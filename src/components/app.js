@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import SongItem from './SongItem/SongItem';
 import searchSpotify from '../utils/searchSpotify';
+import styles from './App.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class App extends Component {
     const { tracks } = this.state;
 
     return (
-      <div>
+      <div className={styles.root}>
         <SearchBar
           updateText={(song) => this.setState({ song })}
           fetchSongs={this.fetchSongs}
