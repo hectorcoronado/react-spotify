@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SearchBar from './SearchBar/SearchBar';
 import SongItem from './SongItem/SongItem';
+import SongList from './SongList/SongList';
 import searchSpotify from '../utils/searchSpotify';
 import styles from './App.css';
 
@@ -11,7 +12,8 @@ export default class App extends Component {
     this.state = {
       initialMessage: 'greeting',
       song: '',
-      tracks: [],
+      tracks: {},
+      songPosition: 0,
     };
   }
 
@@ -21,7 +23,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { tracks } = this.state;
+    const { tracks, songPosition } = this.state;
 
     return (
       <div className={styles.root}>
@@ -30,7 +32,12 @@ export default class App extends Component {
           fetchSongs={this.fetchSongs}
         />
         {/* if tracks.items exists, render component: */}
-        {tracks.items && <SongItem songData={tracks.items[0]} />}
+        {tracks.items && <SongItem songData={tracks.items[songPosition]} />}
+        {tracks.items && <SongList
+          listOfSongs={tracks.items}
+          selectSong={(songPosition) =>
+            this.setState({ songPosition })}
+        />}
       </div>
     );
   }
