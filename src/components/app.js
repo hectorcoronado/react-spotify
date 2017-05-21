@@ -10,7 +10,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      initialMessage: 'greeting',
       song: '',
       tracks: {},
       songPosition: 0,

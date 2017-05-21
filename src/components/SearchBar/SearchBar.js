@@ -6,6 +6,7 @@ const SearchBar = (props) => (
   <div className={styles.root}>
     <input
       className={styles.input}
+      placeholder="Enter a Song to Search!"
       onChange={(e) => props.updateText(e.target.value)}
     />
     <button

@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  height: 290px;
+  width: 100%;
+  overflow: scroll;
+  margin-top: 20px;
+  background-color: rgba(194,231,217, 0.5);
+}
+
+.eachSong {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.songDescription {
+  justify-content: center;
+  color: #0F084B;
+  font-size: 12px;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', monospace;
+}
